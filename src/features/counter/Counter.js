@@ -7,7 +7,9 @@ import {
   incrementAsync,
   selectCount,
 } from './counterSlice';
+
 import styles from './Counter.module.css';
+import { fetchUserById } from '../services/serviceCallSlice';
 
 export function Counter() {
   const count = useSelector(selectCount);
@@ -50,7 +52,7 @@ export function Counter() {
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
+          onClick={() => dispatch(fetchUserById())}
         >
           Add Async
         </button>
